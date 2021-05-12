@@ -9,23 +9,15 @@
 	}
 </style>
 <img id="alicdn" src="" alt=""/>
-<button onclick="reload()">刷 新</button>
+<button onclick="location.reload()">刷 新</button>
 <script>
-reload();
-function reload(){
-var httpRequest = new XMLHttpRequest();//第一步：建立所需的对象
-	httpRequest.open('GET', 'https://common.lccyy.com/?url=http://tianyi.gjwa.cn/api/mjx.php', true);//第二步：打开连接  将请求参数写在url中  ps:"./Ptest.php?name=test&nameone=testone"
-	httpRequest.send();//第三步：发送请求  将请求参数写在URL中
-	/**
-	 * 获取数据后的处理程序
-	 */
+var httpRequest = new XMLHttpRequest();
+	httpRequest.open('GET', 'https://common.lccyy.com/?url=http://tianyi.gjwa.cn/api/mjx.php', true);
+	httpRequest.send();
 	httpRequest.onreadystatechange = function () {
-		if (httpRequest.readyState == 4 && httpRequest.status == 200) {
-			var json = httpRequest.responseText;//获取到json字符串，还需解析
-			document.getElementById("alicdn").src = json;
-			console.log(json);
-		}
+	if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+		var json = httpRequest.responseText;
+		document.getElementById("alicdn").src = json;
+	}
 };
-}
-
 </script>
