@@ -1,5 +1,18 @@
+<style>
+	button{
+		width:100%;
+		border: 0px;
+		height: 50px;
+		background: #cab0e3;
+		color: white;
+		font-size: xx-large;
+	}
+</style>
 <img id="alicdn" src="" alt=""/>
+<button onclick="reload()">刷 新</button>
 <script>
+reload();
+function reload(){
 var httpRequest = new XMLHttpRequest();//第一步：建立所需的对象
 	httpRequest.open('GET', 'https://common.lccyy.com/?url=http://tianyi.gjwa.cn/api/mjx.php', true);//第二步：打开连接  将请求参数写在url中  ps:"./Ptest.php?name=test&nameone=testone"
 	httpRequest.send();//第三步：发送请求  将请求参数写在URL中
@@ -13,4 +26,6 @@ var httpRequest = new XMLHttpRequest();//第一步：建立所需的对象
 			console.log(json);
 		}
 };
+}
+
 </script>
